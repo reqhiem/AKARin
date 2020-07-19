@@ -1,0 +1,55 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+    {% block content %}
+    <link rel="stylesheet" href=" {% static 'myapp/css/busqueda.css' %} ">
+
+    <main class="container">
+        <nav class="row search-bar">
+            <div class="col-6 ">
+                <form action="/buscar/" class="form-inline row-fluid">
+                    <input required type="search" name="search" id="search-input" class="form-control mr-sm-2 col-8" placeholder="Search" aria-label="Search" autofocus >
+                    <button class="btn btn-outline-success my-2 my-sm-0 float-right col-2" type="submit">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="col-6">
+                <!--Filtros-->Filtros
+            </div>
+        </nav>
+
+        
+        {% if documentos %} 
+        <div class="alert alert-success" role="alert">
+            Se encontró {{documentos|length}} coincidencias
+        </div>       
+        <section class="row result">
+            {% for documento in documentos %}
+            <div class="col-3 doc-item-col">
+                <div id="doc-item">
+                    <h2> {{documento.nombre}} </h2>
+                    <p> {{documento.titulo}} </p>
+                    <p><span> {{documento.tag}} </span> </p>
+                    <figure class="figure">
+                        <img src=" {% static 'myapp/img/logo-akarin.jfif' %} " class="figure-img img-fluid rounded" alt="..." height="40px" width="30">
+                        <figcaption class="figure-caption">Document</figcaption>
+                    </figure>
+                </div>
+            </div>
+            {% endfor %} 
+        </section>
+
+        {% else %}
+            {% if warning  %}
+            <div class="alert alert-danger" role="alert">
+                No se encontró coincidencias
+            </div>
+            {% endif %}             
+        {% endif %}
+        
+    </main>
+    {% endblock content %}

@@ -1,0 +1,33 @@
+/*This is for home
+* Deberia estar en un archivo separado
+*/
+/*PARA LOS DOCUMENTOS*/
+
+.doc-item
+{
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(186,186,186,0.76);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(186,186,186,0.76);
+    box-shadow: 0px 0px 10px 0px rgba(186,186,186,0.76);
+
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border: 0px solid #000000;
+
+    margin: 0px 5px;
+    background-color: white;
+}
+.doc-item-col{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.docs{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+main {
+    margin: 5px 0px;
+}
+.alert-info{
+    margin-bottom: 5px;
+}

@@ -1,0 +1,35 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+    
+    {% block content %}
+    <link rel="stylesheet" href=" {% static 'myapp/css/home.css' %} ">
+    <!--Aqui va el contenido principal-->
+    <main class="container">
+        {% if documentos %}
+        <div class="alert alert-info" role="alert">
+            Se encontró {{documentos|length}} documentos en total
+        </div>
+        <section class="row docs">
+            {% for documento in documentos %}
+            <div class="col-3 doc-item-col">
+                <div class="doc-item">
+                    <h2> {{documento.nombre}} </h2>
+                    <p> {{documento.titulo}} </p>
+                    <p><span> {{documento.tag}} </span> </p>
+                    <figure class="figure">
+                        <img src=" {% static 'myapp/img/logo-akarin.jfif' %} " class="figure-img img-fluid rounded" alt="..." height="40px" width="30">
+                        <figcaption class="figure-caption">Document</figcaption>
+                    </figure>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+            No se encontró coincidencias
+        </div>
+        {% endif %}
+    </main>
+
+    {% endblock content %}

@@ -12,14 +12,16 @@
         </div>
         <section class="row docs">
             {% for documento in documentos %}
-            <div class="col-3 doc-item-col">
+            <div class="col-2 doc-item-col">
                 <div class="doc-item">
-                    <h2> {{documento.nombre}} </h2>
-                    <p> {{documento.titulo}} </p>
-                    <p><span> {{documento.tag}} </span> </p>
-                    <figure class="figure">
-                        <img src=" {% static 'myapp/img/logo-akarin.jfif' %} " class="figure-img img-fluid rounded" alt="..." height="40px" width="30">
-                        <figcaption class="figure-caption">Document</figcaption>
+                    <h4 class="text-center"> {{documento.nombre}} </h4>
+                    <figure class="figure text-center container-fluid">
+                        <img src=" {% static 'myapp/img/pdf-icon.png' %} " class="figure-img img-fluid rounded" alt="..." height="40px" width="30">
+                        <figcaption class="figure-caption"><a class="btn btn-primary" href="{{documento.doc.url}}">view</a></figcaption>
+                        <p>
+                            <span class="badge badge-pill badge-secondary"> {{documento.tag}} </span>
+                            <button class="badge badge-pill badge-warning">+</button> 
+                        </p>
                     </figure>
                 </div>
             </div>

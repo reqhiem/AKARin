@@ -8,7 +8,7 @@
     <main class="container">
         
         <section >
-            <form action="/cargar/" method="POST" class="form ">   {% csrf_token %}
+            <form action="/cargar/" method="POST" class="form " enctype="multipart/form-data" >   {% csrf_token %}
                 <div class="form-group row">
                     <label for="nombre" class="col-form-label col-sm-2 text-right  font-weight-bold" autofocus>Nombre: </label>
                     <div class="col-sm-9">
@@ -30,7 +30,7 @@
                 <div class="form-group row">
                     <label for="customFileLang" class="col-form-label col-sm-2 text-right font-weight-bold">Archivo: </label>
                     <div class="col-sm-9 custom-file">
-                        <input name="myfile" type="file" class="custom-file-input" id="customFileLang" lang="es" required>
+                        <input type="file" name="filedoc"  class="custom-file-input" id="customFileLang" lang="es" required>
                         <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
                     </div>
                 </div>

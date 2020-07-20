@@ -1,0 +1,73 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+    {% block content %}
+    <link rel="stylesheet" href=" {% static 'myapp/css/profile.css' %} ">
+    
+	<main class="container">
+		<div class="row profile">
+			<div class="col-md-3">
+				<div class="profile-sidebar">
+				<!-- barra del costado -->
+				
+					<div class="profile-userpic">
+						<img src="https://static.change.org/profile-img/default-user-profile.svg" class="img-responsive" alt="">
+					</div>
+				
+					<!-- Barra del costado-->
+					<div class="profile-usertitle">
+						<div class="profile-usertitle-name">
+							Ciencia de la Computación
+						</div>
+						<div class="profile-usertitle-job">
+							Usuario
+						</div>
+					</div>
+					<!-- END SIDEBAR USER TITLE -->
+					<!--botones de la barra inicio-->
+					<div class="profile-userbuttons">
+						<button type="button" class="btn btn-success btn-sm">Archivos</button>
+						<button type="button" class="btn btn-danger btn-sm">Mensaje</button>
+					</div>
+					<!--fin barra botones -->
+					<!-- barra del menu -->
+					<div class="profile-usermenu">
+						<ul class="nav">
+							<li class="active">
+								<a href="#">
+								<i class="glyphicon glyphicon-home"></i>
+								Vista Global </a>
+							</li>
+							<li>
+								<a href="#">
+								<i class="glyphicon glyphicon-user"></i>
+								Configuración </a>
+							</li>
+							<li>
+								<a href="#" target="_blank">
+								<i class="glyphicon glyphicon-ok"></i>
+								Tareas </a>
+							</li>
+							<li>
+								<a href="#">
+								<i class="glyphicon glyphicon-flag"></i>
+								Help </a>
+							</li>
+						</ul>
+					</div>
+				
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="profile-content">
+				Contenido con relación al usuario va aqui
+				</div>
+			</div>
+		</div>
+	</main>
+	<center>
+	<strong>By AKARin <a href="" target="_blank"></a></strong>
+	</center>
+	<br>
+	</br>
+{% endblock %}

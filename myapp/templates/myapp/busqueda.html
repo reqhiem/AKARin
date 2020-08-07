@@ -22,22 +22,26 @@
             </form>
         </nav>
 
-        
         {% if date %}
             <div class="alert alert-success" role="alert">
                 Se encontró {{date|length}} coincidencias
             </div>       
             <section class="row result">
             {% for date in date %}
-            <div class="col-3 doc-item-col">
+            <div class="col-2 doc-item-col">
                 <div id="doc-item">
-                    <h2> {{date.nombre}} </h2>
-                    <p> {{date.titulo}} </p>
-                    <p><span> {{date.tag}} </span> </p>
-                    <figure class="figure">
-                        <img src=" {% static 'myapp/img/logo-akarin.jfif' %} " class="figure-img img-fluid rounded" alt="..." height="40px" width="30">
-                        <figcaption class="figure-caption">{{date.loaded.date}} {{date.tipo}}</figcaption>
+
+                    <h4 class="text-center"> {{date.nombre}} </h4>
+                    <figure class="figure text-center container-fluid">
+                        <img src=" {% static 'myapp/img/pdf-icon.png' %} " class="figure-img img-fluid rounded" alt="..." height="40px" width="30">
+                        <figcaption class="figure-caption"><a class="btn btn-primary" href="{{date.doc.url}}">view</a></figcaption>
+                        <p>
+                            <span class="badge badge-pill badge-secondary"> {{date.tag}} </span>
+                            <button class="badge badge-pill badge-warning">+</button> 
+                        </p>
                     </figure>
+
+
                 </div>
             </div>
             {% endfor %} 

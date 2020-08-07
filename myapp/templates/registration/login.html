@@ -23,24 +23,38 @@
             <div class="row">
                 <div class="col-md-9 col-lg-8 mx-auto">
                 <h3 class="login-heading mb-4">Bienvenido</h3>
-                <form action="/" method="POST" > {% csrf_token %}
-                    <div class="form-label-group">
-                    <input type="text" id="inputEmail" class="form-control" placeholder="Nombre de usuario" required autofocus>
-                    <label for="inputEmail">Nombre de usuario</label>
+
+                {% if next %}
+                    {% if user.is_authenticated %}
+                    <p>Your account doesn't have access to this page. To proceed,
+                    please login with an account that has access.</p>
+                    {% else %}
+                    <p>Por favor ingresa para ver la página</p>
+                    {% endif %}
+                {% endif %}
+
+                <form action=" {% url 'login' %} " method="POST" >{% csrf_token %}
+                    <div class="form-label-group form-control">
+                    {{ form.username }}
+                    {{ form.username.label_tag }}
                     </div>
 
-                    <div class="form-label-group">
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-                    <label for="inputPassword">Contraseña</label>
+                    <div class="form-label-group form-control">
+                    {{ form.password }}
+                    {{ form.password.label_tag }}
                     </div>
 
                     <div class="custom-control custom-checkbox mb-3">
+                    
                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">Recordar contraseña</label>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Acceder</button>
+                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" value="login">Acceder</button>
                     <div class="text-center">
-                    <a class="small" href="#">Olvidó la contraseña?</a></div>
+                    <a class="small" href=" {% url 'password_reset' %} ">Olvidó la contraseña?</a></div>
+                    {% if form.errors %}
+                    <p>Your username and password didn't match. Please try again.</p>
+                    {% endif %}
                 </form>
                 </div>
             </div>

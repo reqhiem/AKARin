@@ -1,5 +1,6 @@
 from django.urls import path, include
 
+from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -14,6 +15,8 @@ urlpatterns = [
     path('loading/', views.help, name="Subiendo"),
     path('perfile/', views.perfile, name="Perfile"),
     path('accounts/', include('django.contrib.auth.urls')),
+    
+    path('accounts/login/', auth_views.LoginView.as_view(template_name='myapp/login.html')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -38,11 +38,11 @@
   }
   
   .form-label-group>label {
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     display: block;
-    width: 100%;
     margin-bottom: 0;
     /* Override default `<label>` margin */
     line-height: 1.5;
@@ -110,3 +110,10 @@
       color: #777;
     }
   }
+
+#id_username{
+  width: 100%;
+}
+#id_password{
+  width: 100%;
+}

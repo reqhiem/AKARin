@@ -26,29 +26,30 @@ del proyecto y ejecuta el siguiente comando:
 Cabe resaltar que para modo testeo necesita configurar el archivo $akarin->config.py
 con los valores de su esquema y su configuración de acceso:
 
-$#MYSQL DB
-$DATABASES = {
-$    'default': {
-$        'ENGINE': 'django.db.backends.mysql',
-$        'NAME': 'akarin',		#Nombre del Scheme
-$        'USER': 'root',		#Usuario de la conexión
-$        'PASSWORD': 'admin',	#Contraseñ de la conexión
-$        'HOST': 'localhost',	#Dirección del host
-$        'PORT': '3306'			#Puerto
-$    }
-$}
-
+```
+#MYSQL DB
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'akarin',		#Nombre del Scheme
+        'USER': 'root',		#Usuario de la conexión
+        'PASSWORD': 'admin',	#Contraseñ de la conexión
+        'HOST': 'localhost',	#Dirección del host
+        'PORT': '3306'			#Puerto
+    }
+}
+```
 O en su defecto usar la configuración de la base de datos ligera implementada en
 SQLite3:
-
-$#SQLite3
-$DATABASES = {
-$    'default': {
-$        'ENGINE': 'django.db.backends.sqlite3',
-$        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-$    }
-$}
-
+```
+#SQLite3
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+```
 
 ##Visualizar
 Para interactuar con el proyecto se dirige al navegador y accede a la siguiente 

@@ -11,13 +11,18 @@ Para testear el proyecto actual de forma local se requiere
 2. Librerias Pillow
 
 ##Ejecución
+
 Para ejecutar el actual proyecto en desarrollo se ubica en el directorio
 del proyecto y ejecuta el siguiente comando:
 
 (En windows)
+
 	$ python manage.py runserver
+
 (En Linux)
+
 	$ python3 manage.py runserver
+
 Cabe resaltar que para modo testeo necesita configurar el archivo $akarin->config.py
 con los valores de su esquema y su configuración de acceso:
 

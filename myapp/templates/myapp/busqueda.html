@@ -33,8 +33,15 @@
 
                     <h4 class="text-center"> {{date.nombre}} </h4>
                     <figure class="figure text-center container-fluid">
-                        <img src=" {% static 'myapp/img/pdf-icon.png' %} " class="figure-img img-fluid rounded" alt="..." height="40px" width="30">
-                        <figcaption class="figure-caption"><a class="btn btn-primary" href="{{date.doc.url}}">view</a></figcaption>
+                        <img src=" {% static 'myapp/img/pdf-icon.png' %} " class="figure-img img-fluid rounded" alt="..." height="40px" width="30"> <hr>
+                        <button onclick="myFunc(id, '{{date.doc.url}}')"  id="{{date.id}}" class="btns button btn-primary">view</button>
+                        <div id="{{date.doc.url}}" class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                              <span class="close">&times;</span>
+                              <embed height="100%" width="100%" src="{{date.doc.url}}" title="Doc">
+                            </div>
+                        </div>
                         <p>
                             <span class="badge badge-pill badge-secondary"> {{date.tag}} </span>
                             <button class="badge badge-pill badge-warning">+</button>

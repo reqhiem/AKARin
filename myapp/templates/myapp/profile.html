@@ -5,69 +5,82 @@
     <link rel="stylesheet" href=" {% static 'myapp/css/profile.css' %} ">
     
 	<main class="container">
-		<div class="row profile">
-			<div class="col-md-3">
-				<div class="profile-sidebar">
-				<!-- barra del costado -->
-				
-					<div class="profile-userpic">
-						<img src="https://static.change.org/profile-img/default-user-profile.svg" class="img-responsive" alt="">
-					</div>
-				
-					<!-- Barra del costado-->
-					<div class="profile-usertitle">
-						<div class="profile-usertitle-name">
-							Ciencia de la Computación
+		<section id="profile">
+			<div class="row">
+				<div class="col-sm-3"><!--left col-->
+					<div class="text-center">
+						<img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+						<h6>Cambiar de foto...</h6>
+						<input type="file" class="text-center center-block file-upload">
+					</div></hr><br>
+		
+					<div class="panel panel-default">
+						<div class="panel-heading">Personal <i class="fa fa-link fa-1x"></i></div>
+						<div class="panel-body">
+							<label class="container" for="">Usuario :</label><br>
+							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							<label class="container" for="">Celular: </label><br>
+							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+							<label class="container" for="">Ciudad :</label>
+							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+
 						</div>
-						<div class="profile-usertitle-job">
-							Usuario
+					</div>
+				</div>
+
+				<div class="col-sm-9">
+					<form class="form" action="##" method="post" id="registrationForm">
+						<div class="form-group">
+							<div class="col-xs-6">
+								<label for="first_name"><h4>Primer Nombre</h4></label>
+								<input type="text" class="form-control" name="first_name" id="first_name" placeholder="Primer Nombre" title="Ingresar">
+							</div>
 						</div>
-					</div>
-					<!-- END SIDEBAR USER TITLE -->
-					<!--botones de la barra inicio-->
-					<div class="profile-userbuttons">
-						<button type="button" class="btn btn-success btn-sm">Archivos</button>
-						<button type="button" class="btn btn-danger btn-sm">Mensaje</button>
-					</div>
-					<!--fin barra botones -->
-					<!-- barra del menu -->
-					<div class="profile-usermenu">
-						<ul class="nav">
-							<li class="active">
-								<a href="#">
-								<i class="glyphicon glyphicon-home"></i>
-								Vista Global </a>
-							</li>
-							<li>
-								<a href="#">
-								<i class="glyphicon glyphicon-user"></i>
-								Configuración </a>
-							</li>
-							<li>
-								<a href="#" target="_blank">
-								<i class="glyphicon glyphicon-ok"></i>
-								Tareas </a>
-							</li>
-							<li>
-								<a href="#">
-								<i class="glyphicon glyphicon-flag"></i>
-								Help </a>
-							</li>
-						</ul>
-					</div>
-				
+						<div class="form-group">
+							<div class="col-xs-6">
+							<label for="last_name"><h4>Segundo Nombre</h4></label>
+								<input type="text" class="form-control" name="last_name" id="last_name" placeholder="Segundo Nombre" title="ingresar">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-6">
+								<label for="phone"><h4>Telefono</h4></label>
+								<input type="text" class="form-control" name="phone" id="phone" placeholder="Teléfono" title="Ingrear telefomo">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-6">
+							<label for="mobile"><h4>Celular</h4></label>
+								<input type="text" class="form-control" name="mobile" id="mobile" placeholder="Celular" title="Ingresar celular">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-6">
+								<label for="email"><h4>Correo Electrónico</h4></label>
+								<input type="email" class="form-control" name="email" id="email" placeholder="Correo Electrónico" title="Ingresar email">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-6">
+								<label for="email"><h4>Ciudad</h4></label>
+								<input type="email" class="form-control" id="location" placeholder="Lugar" title="Ingresar ciudad">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-12">
+								<label for="password"><h4>Contraseña</h4></label>
+								<input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" title="Ingresar contraseña">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-12">
+								<br>
+									<button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>Guardar</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
-			<div class="col-md-9">
-				<div class="profile-content">
-				Contenido con relación al usuario va aqui
-				</div>
-			</div>
-		</div>
+		</section>
 	</main>
-	<center>
-	<strong>By AKARin <a href="" target="_blank"></a></strong>
-	</center>
-	<br>
-	</br>
 {% endblock %}

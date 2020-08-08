@@ -14,6 +14,7 @@ urlpatterns = [
     path('help/', views.help, name="Ayuda"),
     path('loading/', views.help, name="Subiendo"),
     path('perfile/', views.perfile, name="Perfile"),
+    path('eliminar/<id>/', views.eliminar, name="Eliminar"),
     path('accounts/', include('django.contrib.auth.urls')),
     
     path('accounts/login/', auth_views.LoginView.as_view(template_name='myapp/login.html')),

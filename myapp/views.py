@@ -82,3 +82,11 @@ def help(request):
 @login_required
 def perfile(request):
     return render(request, 'myapp/profile.html', {"titulo": "Perfil de usuario"})
+
+@login_required
+def eliminar(request, id):
+    documentos = Documento.objects.all()
+    doc = Documento.objects.get(id=id)
+    doc.delete()
+
+    return render(request, 'myapp/home.html', {"documentos": documentos, "titulo": "Eliminar"})

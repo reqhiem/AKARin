@@ -4,18 +4,22 @@ from django.db.models import Q
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.clickjacking import xframe_options_sameorigin
 
 # Create your views here.
 # Import models
 from .models import Documento
 
+
 @login_required
+@xframe_options_sameorigin
 def home(request):
     documentos = Documento.objects.all()
     return render(request, "myapp/home.html", {"documentos": documentos ,"titulo": "Bienvenido"})
 
 #Para la busqueda
 @login_required
+@xframe_options_sameorigin
 def busqueda(request):
     return render(request, 'myapp/busqueda.html', {"titulo": "Busqueda"})
 

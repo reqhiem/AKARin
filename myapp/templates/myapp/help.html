@@ -2,10 +2,101 @@
 {% load static %}
 
     {% block content %}
+    <!--<link rel="stylesheet" href=" {% static 'myapp/css/help.css' %} ">-->
     <link rel="stylesheet" href=" {% static 'myapp/css/help.css' %} ">
+
     <main class="container">
-        <section class="row tutorial">
-            <img src=" {% static 'myapp/img/bus.PNG' %}" alt="">
-        </section>
+        <div class="container">
+            <!-- Page Heading -->
+            <h1 class="my-4">Tutorial
+                <small>Funcionalidades de AKARin</small>
+            </h1>
+
+            <!-- Project One -->
+            <div class="row">
+                <div class="col-md-7">
+                <a href="#">
+                    <img class="img-fluid rounded mb-3 mb-md-0" src=" {% static 'myapp/img/BotonInicio.png' %} " alt="">
+                </a>
+                </div>
+                <div class="col-md-5">
+                <h3>Inicio ¿Qué hace?</h3>
+                <p>Al momento de acceder con tu cuenta y presionar esta opcion, usted lograra ver una previsualizacion de los documentos que ya existen en la pagina.PAra evitarle el tiempo de busqueda.
+                    Si selecciona uno de estos archivos obtendra una previsualizacion en formato PDF.</p>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Project Two -->
+            <div class="row">
+                <div class="col-md-5">
+                    <h3>Busqueda ¿Qué hace?</h3>
+                    <p>Si usted desea realizar ua busqueda, debe dirigirse a la opcion "Busqueda". En ese lugar usted podra realizar una busqueda colocando el nombre, un intervalo de fecha, para asi facilitarle la busqueda, de acuerdo a como vaya realizando la busqueda esta le mandara un autollenado de lo que usted desee.
+                        Al finalizar esta accion se mostrara el documento que buscaba.</p>
+                </div>
+                <div class="col-md-7">
+                    <a href="#">
+                        <img class="img-fluid rounded mb-3 mb-md-0" src=" {% static 'myapp/img/BotonBusqueda.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Project Three -->
+            <div class="row">
+                <div class="col-md-7">
+                <a href="#">
+                    <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'myapp/img/BotonSubir.png' %}" alt="">
+                </a>
+                </div>
+                <div class="col-md-5">
+                <h3>Subir ¿Qué hace?</h3>
+                <p>
+                    Al ir a la opcion "Subir" nosotros observaremos campos que debemos rellenar para que nuestro documento se suba de acuerdo a lo completado, aqui se debe de ingresar Nombre, Tipo de documento, Tag, y elegir un Archivo, presionando "Browse"
+                        para que usted busque el documento que quiere subir.
+                        Despues de terminar todos estos pasos, por ultimo debe presionar el boton "Submit Form" y se finalizara la accion.
+                </p>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Project Four 
+            <div class="row">
+                <div class="col-md-5">
+                <h3>Project Four</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
+                <a class="btn btn-primary" href="#">View Project</a>
+                </div>
+                <div class="col-md-7">
+                <a href="#">
+                    <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+                </a>
+                </div>
+            </div>-->
+            <!-- /.row -->
+
+            <hr>
+
+            <!--Bottom Footer-->
+            <div class="bottom section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="copyright">
+                                <p>© <span>2020</span> <a href="#" class="transition">AKARin</a> Todos los derechos reservados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Bottom Footer-->
+
+        </div>
     </main>
     {% endblock content %}

@@ -28,13 +28,13 @@
             </div>       
             <section class="row result">
             {% for date in date %}
-            <div class="col-2 doc-item-col">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 doc-item-col">
                 <div id="doc-item">
 
-                    <h4 class="text-center"> {{date.nombre}} </h4>
+                    <h5 class="text-center"> {{date.nombre | truncatechars:20 }} </h5>
                     <figure class="figure text-center container-fluid">
                         <img src=" {% static 'myapp/img/pdf-icon.png' %} " class="figure-img img-fluid rounded" alt="..." height="40px" width="30"> <hr>
-                        <button onclick="myFunc(id, '{{date.doc.url}}')"  id="{{date.id}}" class="btns button btn-primary">view</button>
+                        <button onclick="myFunc(id, '{{date.doc.url}}')"  id="{{date.id}}" class="btns button btn-primary">Ver</button>
                         <div id="{{date.doc.url}}" class="modal">
                             <!-- Modal content -->
                             <div class="modal-content">
